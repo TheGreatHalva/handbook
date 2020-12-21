@@ -1,7 +1,15 @@
 import * as React from 'react';
-import { Button, View, Text, ToastAndroid } from 'react-native';
+import { Button, View, Text, ToastAndroid, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+const strings = require('./assets/strings/ru.json')
+
+const styles = StyleSheet.create({
+  article: {
+    paddingHorizontal: 5
+  }
+})
 
 function HomeScreen({ navigation }) {
   return (
@@ -9,13 +17,13 @@ function HomeScreen({ navigation }) {
       {/*margin: '1' */} 
       {/*<h2>Выберите категорию</h2>*/}
       <Button
-        title="Основы информатики"
-        color="#9086FF"
+        title={strings.ICTObjects.title}
+        color={strings.ICTObjects.color}
         onPress={() => navigation.navigate('ICTObjects')}
       />
       <Button
-        color="#D794FF"
-        title="Go to Licenses"
+        title={strings.Licenses.title}
+        color={strings.Licenses.color}
         onPress={() => {
           ToastAndroid.show(
             "ALL YOUR BASE ARE BELONG TO US",
@@ -29,15 +37,32 @@ function HomeScreen({ navigation }) {
 
 function ICTObjects() {
   return (
-    <View style={{ flex: 1, alignItems: 'stretch', justifyContent: 'flex-start' }}>
-      <Text style={{
-        fontSize:18
-      }}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec felis vel lacus viverra volutpat eget id lacus. In finibus tincidunt dolor, id commodo nunc efficitur accumsan. Proin efficitur lectus diam, quis cursus odio euismod id. Praesent sem nibh, pharetra vel pulvinar finibus, ultrices eget justo. Nulla lobortis suscipit felis, ac pharetra diam egestas nec. Proin vulputate vitae dolor vel accumsan. Pellentesque et lectus nec sem tempor semper eu ut mauris. Fusce eu volutpat velit, vitae fringilla quam. Nam tincidunt pulvinar interdum. Phasellus vitae volutpat urna. Cras sit amet consectetur augue. Nullam malesuada odio sem, eu ornare orci tristique nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    <View style={{ 
+    flex: 1, 
+    alignItems: 'stretch', 
+    justifyContent: 'flex-start' 
+    }}>
+      <View style={styles.article}>
+      <Text style={{fontSize: 18}}>
+      {strings.ICTObjects.body}
       </Text>
+      </View>
     </View>
   );
+}
+
+function Licenses() {
+  return  (
+    <View style={{
+      flex: 1,
+      alignItems: 'stretch',
+      justifyContent: 'flex-start'
+    }}>
+      <View style={styles.article, {
+
+      }}
+    </View>
+  )
 }
 
 const Stack = createStackNavigator();
@@ -57,7 +82,7 @@ function App() {
         name="ICTObjects" 
         component={ICTObjects} 
         options = {{
-            title:"Основы информатики"
+            title:strings.ICTObjects.title
         }}
         />
       </Stack.Navigator>
