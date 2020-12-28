@@ -8,7 +8,7 @@ const strings = require('./assets/strings/ru.json')
 const styles = StyleSheet.create({
   article: {
     paddingHorizontal: 5
-  }
+  },
 })
 
 function HomeScreen({ navigation }) {
@@ -25,10 +25,7 @@ function HomeScreen({ navigation }) {
         title={strings.Licenses.title}
         color={strings.Licenses.color}
         onPress={() => {
-          ToastAndroid.show(
-            "ALL YOUR BASE ARE BELONG TO US",
-            ToastAndroid.SHORT
-          );
+          navigation.navigate('Licenses')
         }}
       />
     </View>
@@ -53,15 +50,9 @@ function ICTObjects() {
 
 function Licenses() {
   return  (
-    <View style={{
-      flex: 1,
-      alignItems: 'stretch',
-      justifyContent: 'flex-start'
-    }}>
-      <View style={styles.article, {
-
-      }}
-    </View>
+  <View style={styles.article}>
+    <Text>{strings.Licenses.body}</Text>
+  </View>
   )
 }
 
@@ -83,6 +74,13 @@ function App() {
         component={ICTObjects} 
         options = {{
             title:strings.ICTObjects.title
+        }}
+        />
+        <Stack.Screen
+        name="Licenses"
+        component={Licenses}
+        options = {{
+          title:'Лицензии'
         }}
         />
       </Stack.Navigator>
