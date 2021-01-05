@@ -1,12 +1,17 @@
 {
     "ICTObjects":{
-        "color":"#9086FF",
+        "color":"#c4b6ff",
         "title":"Основы информатики",
         "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec felis vel lacus viverra volutpat eget id lacus. In finibus tincidunt dolor, id commodo nunc efficitur accumsan. Proin efficitur lectus diam, quis cursus odio euismod id. Praesent sem nibh, pharetra vel pulvinar finibus, ultrices eget justo. Nulla lobortis suscipit felis, ac pharetra diam egestas nec. Proin vulputate vitae dolor vel accumsan. Pellentesque et lectus nec sem tempor semper eu ut mauris. Fusce eu volutpat velit, vitae fringilla quam. Nam tincidunt pulvinar interdum. Phasellus vitae volutpat urna. Cras sit amet consectetur augue. Nullam malesuada odio sem, eu ornare orci tristique nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     },
     "Licenses":{
-        "color":"#D794FF",
+        "color":"#5c59cb",
         "title":"Лицензии",
         "body":"Это свободная программа: вы можете перераспространять ее и/или изменять ее на условиях Стандартной общественной лицензии GNU в том виде, в каком она была опубликована Фондом свободного программного обеспечения; либо версии 3 лицензии, либо (по вашему выбору) любой более поздней версии. \n \nЭта программа распространяется в надежде, что она будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННЫХ ЦЕЛЕЙ. Подробнее см. в Стандартной общественной лицензии GNU. \n \nВы должны были получить копию Стандартной общественной лицензии GNU вместе с этой программой. Если это не так, см. https://www.gnu.org/licenses/"
+    },
+    "CountingInf":{
+        "color":"#c4b6ff",
+        "title":"Способы измерения информации",
+        "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec felis vel lacus viverra volutpat eget id lacus. In finibus tincidunt dolor, id commodo nunc efficitur accumsan. Proin efficitur lectus diam, quis cursus odio euismod id. Praesent sem nibh, pharetra vel pulvinar finibus, ultrices eget justo. Nulla lobortis suscipit felis, ac pharetra diam egestas nec. Proin vulputate vitae dolor vel accumsan. Pellentesque et lectus nec sem tempor semper eu ut mauris. Fusce eu volutpat velit, vitae fringilla quam. Nam tincidunt pulvinar interdum. Phasellus vitae volutpat urna. Cras sit amet consectetur augue. Nullam malesuada odio sem, eu ornare orci tristique nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     }
 }

@@ -56,6 +56,14 @@ function Licenses() {
   )
 }
 
+function CountingInf() {
+  return  (
+  <View style={styles.article}>
+      <Text></Text>
+  </View>
+  )
+}
+
 const Stack = createStackNavigator();
 
 function App() {
