@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   article: {
     paddingHorizontal: 5
   },
-})
+})  
 
 function HomeScreen({ navigation }) {
   return (
@@ -18,14 +18,26 @@ function HomeScreen({ navigation }) {
       {/*<h2>Выберите категорию</h2>*/}
       <Button
         title={strings.ICTObjects.title}
-        color={strings.ICTObjects.color}
+        color={strings.color}
         onPress={() => navigation.navigate('ICTObjects')}
       />
       <Button
+        title={strings.CountingInf.title}
+        color={strings.color}
+        onPress={() => navigation.navigate('CountingInf')}
+      />
+      <Button
         title={strings.Licenses.title}
-        color={strings.Licenses.color}
+        color={strings.color}
         onPress={() => {
           navigation.navigate('Licenses')
+        }}
+      />
+      <Button
+        title={strings.NumBases.title}
+        color={strings.color}
+        onPress={() => {
+          navigation.navigate('NumBases')
         }}
       />
     </View>
@@ -53,15 +65,27 @@ function Licenses() {
   <View style={styles.article}>
     <Text>{strings.Licenses.body}</Text>
   </View>
-  )
+  );
 }
 
 function CountingInf() {
   return  (
   <View style={styles.article}>
-      <Text></Text>
+      <Text style={{fontSize: 18}}>
+      {strings.CountingInf.body}
+      </Text>
   </View>
-  )
+  );
+}
+
+function NumBases() {
+  return  (
+  <View style={styles.article}>
+      <Text style={{fontSize: 18}}>
+      {strings.NumBases.body}
+      </Text>
+  </View>
+  );
 }
 
 const Stack = createStackNavigator();
@@ -88,7 +112,21 @@ function App() {
         name="Licenses"
         component={Licenses}
         options = {{
-          title:'Лицензии'
+          title:strings.Licenses.title
+        }}
+        />
+        <Stack.Screen
+        name="CountingInf"
+        component={CountingInf}
+        options = {{
+          title:strings.CountingInf.title
+        }}
+        />
+        <Stack.Screen
+        name="NumBases"
+        component={NumBases}
+        options = {{
+          title:strings.NumBases.title
         }}
         />
       </Stack.Navigator>

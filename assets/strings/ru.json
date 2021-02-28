@@ -1,17 +1,19 @@
 {
+    "color":"#385FE0",
     "ICTObjects":{
-        "color":"#c4b6ff",
         "title":"Основы информатики",
-        "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec felis vel lacus viverra volutpat eget id lacus. In finibus tincidunt dolor, id commodo nunc efficitur accumsan. Proin efficitur lectus diam, quis cursus odio euismod id. Praesent sem nibh, pharetra vel pulvinar finibus, ultrices eget justo. Nulla lobortis suscipit felis, ac pharetra diam egestas nec. Proin vulputate vitae dolor vel accumsan. Pellentesque et lectus nec sem tempor semper eu ut mauris. Fusce eu volutpat velit, vitae fringilla quam. Nam tincidunt pulvinar interdum. Phasellus vitae volutpat urna. Cras sit amet consectetur augue. Nullam malesuada odio sem, eu ornare orci tristique nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        "body":"Информатика - наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений.\n\nОбъектами изучения в информатике являются информация, информационный процесс, алгоритм, исполнитель, компьютер, включая его аппаратное и программное обеспечение, и т. д. \n"
     },
     "Licenses":{
-        "color":"#5c59cb",
         "title":"Лицензии",
         "body":"Это свободная программа: вы можете перераспространять ее и/или изменять ее на условиях Стандартной общественной лицензии GNU в том виде, в каком она была опубликована Фондом свободного программного обеспечения; либо версии 3 лицензии, либо (по вашему выбору) любой более поздней версии. \n \nЭта программа распространяется в надежде, что она будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННЫХ ЦЕЛЕЙ. Подробнее см. в Стандартной общественной лицензии GNU. \n \nВы должны были получить копию Стандартной общественной лицензии GNU вместе с этой программой. Если это не так, см. https://www.gnu.org/licenses/"
     },
     "CountingInf":{
-        "color":"#c4b6ff",
-        "title":"Способы измерения информации",
-        "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec felis vel lacus viverra volutpat eget id lacus. In finibus tincidunt dolor, id commodo nunc efficitur accumsan. Proin efficitur lectus diam, quis cursus odio euismod id. Praesent sem nibh, pharetra vel pulvinar finibus, ultrices eget justo. Nulla lobortis suscipit felis, ac pharetra diam egestas nec. Proin vulputate vitae dolor vel accumsan. Pellentesque et lectus nec sem tempor semper eu ut mauris. Fusce eu volutpat velit, vitae fringilla quam. Nam tincidunt pulvinar interdum. Phasellus vitae volutpat urna. Cras sit amet consectetur augue. Nullam malesuada odio sem, eu ornare orci tristique nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        "title":"Подходы к измерению информации",
+        "body":"Существует 2 подхода к измерению информации: алфавитный и содержательный. Оба подхода использует одни и те же принципы измерения информации, но применяются в разных ситуациях.\n\nКоличество информации в алфавитном подходе вычисляется по формуле Хартли:\nI=K*log(2,N)\n\nПри этом, в алфавитном подходе N - мощность алфавита в бит/символ, K - количество символов в тексте в символах, а I - информационный объем в битах (т.е. количество информации в тексте). Таким образом, алфавитный подход используется, когда требуется вычислить количество информации в тексте.\n\nВ содержательном подходе, количество информации тоже вычисляется по формуле Хартли, но в другом виде:\n\ni=log(2,N)\nПри этом, N - количество равновероятных событий, а i - количество информации о происхождении данного события."
+    },
+    "NumBases":{
+        "title":"Системы счисления",
+        "body":"Системой счисления или нумерацией называется определенный способ записи чисел\n\nЦифро - символ, используемый для записи чисел."
     }
 }
