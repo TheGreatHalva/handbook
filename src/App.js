@@ -2,15 +2,28 @@ import * as React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import {
+    useFonts,
+    PTSerif_400Regular
+} from "@expo-google-fonts/pt-serif";
 
 const strings = require('./assets/strings/ru.json');
 
 let styles = StyleSheet.create({
     article: {
+        flex: 1,
+        alignItems: 'stretch',
+        justifyContent: 'flex-start',
         paddingHorizontal: 5
     },
     textdefault: {
-        fontSize: 18
+        fontFamily: 'PTSerif_400Regular',
+        fontSize: 14
+    },
+    formulae: {
+        fontFamily: 'PTSerif_400Regular',
+        fontSize: 16,
+        fontStyle: 'italic'
     }
 });
 
@@ -30,17 +43,17 @@ function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate('CountingInf')}
       />
       <Button
+            title={strings.NumBases.title}
+            color={strings.color}
+            onPress={() => {
+                navigation.navigate('NumBases')
+            }}
+      />
+      <Button
         title={strings.Licenses.title}
         color={strings.color}
         onPress={() => {
           navigation.navigate('Licenses')
-        }}
-      />
-      <Button
-        title={strings.NumBases.title}
-        color={strings.color}
-        onPress={() => {
-          navigation.navigate('NumBases')
         }}
       />
     </View>
@@ -70,7 +83,7 @@ function ICTObjects() {
 function Licenses() {
   return  (
   <View style={styles.article}>
-    <Text style={styles.default}>
+    <Text style={styles.textdefault}>
         Это свободная программа: вы можете перераспространять ее и/или изменять ее на условиях Стандартной общественной лицензии GNU в том виде, в каком она была опубликована Фондом свободного программного обеспечения; либо версии 3 лицензии, либо (по вашему выбору) любой более поздней версии.
         Эта программа распространяется в надежде, что она будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННЫХ ЦЕЛЕЙ. Подробнее см. в Стандартной общественной лицензии GNU. Вы должны были получить копию Стандартной общественной лицензии GNU вместе с этой программой. Если это не так, см. https://www.gnu.org/licenses/
     </Text>
@@ -81,22 +94,31 @@ function Licenses() {
 function CountingInf() {
   return  (
   <View style={styles.article}>
-      <Text style={styles.default}>
-          <Text>
+      <View>
+          <Text style={styles.textdefault}>
           Существует 2 подхода к измерению информации: алфавитный и содержательный. Оба подхода использует одни и те же принципы измерения информации, но применяются в разных ситуациях.
           </Text>
+      </View>
 
-          <Text>
-          Количество информации в алфавитном подходе вычисляется по формуле Хартли: {'\n'}
-          I=log_2 N{'\n'}
-          При этом, в алфавитном подходе N - мощность алфавита в бит/символ, K - количество символов в тексте в символах, а I - информационный объем в битах (т.е. количество информации в тексте). Таким образом, алфавитный подход используется, когда требуется вычислить количество информации в тексте.
+      <View>
+          <Text style={styles.textdefault}>
+          Количество информации в алфавитном подходе вычисляется по формуле Хартли:{'\n'}
+          <Text style={styles.formulae}>
+          I = log(2,N)
           </Text>
-          <Text>
+          {'\n'}При этом, в алфавитном подходе N - мощность алфавита в бит/символ, K - количество символов в тексте в символах, а I - информационный объем в битах (т.е. количество информации в тексте). Таким образом, алфавитный подход используется, когда требуется вычислить количество информации в тексте.
+          </Text>
+      </View>
+
+      <View>
+          <Text style={styles.textdefault}>
           В содержательном подходе, количество информации тоже вычисляется по формуле Хартли, но в другом виде:{'\n'}
-          i=log_2 N{'\n'}
-          При этом, N - количество равновероятных событий, а i - количество информации о происхождении данного события.
+          <Text style={styles.formulae}>
+          i=log(2,N)
           </Text>
-      </Text>
+          {'\n'}При этом, N - количество равновероятных событий, а i - количество информации о происхождении данного события.
+          </Text>
+      </View>
   </View>
   );
 }
@@ -104,8 +126,12 @@ function CountingInf() {
 function NumBases() {
   return  (
   <View style={styles.article}>
-      <Text style={{fontSize: 18}}>
-      {strings.NumBases.body}
+      <Text style={styles.textdefault}>
+          <Text style={{
+              fontStyle: 'italic'
+          }}>Система счисления </Text> - символический метод записи чисел, представление чисел с помощью письменных знаков. {'\n'}
+          Самыми частоиспользуемыми являются позиционные системы счисления. В них значение знака зависит от его положения в числе. Так, "1" в крайнем правом разряде = 1, а во втором разряде справа "1"=10. {'\n'}
+          Из одной системы счисления можно легко перейти в другую. Так, например, из n-иричной в 10-чную можно перейти, используя схему Горнера. Так, {'\n'}<Text style={styles.formulae}>(111001)2 = (2^5+2^4+2^3+2)10 = (32+16+8+2)10 = (58)10</Text>
       </Text>
   </View>
   );
