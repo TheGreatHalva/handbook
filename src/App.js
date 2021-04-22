@@ -3,21 +3,23 @@ import { Button, View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
-    usefonts,
-    PTSerif_400Regular,
-    PTSerif_400Regular_Italic,
-    PTSerif_700Bold,
-    PTSerif_700Bold_Italic,
+    useFonts,
+    PTSerif_400Regular
 } from "@expo-google-fonts/pt-serif";
+import * as Linking from "expo-linking";
 
 const strings = require('./assets/strings/ru.json');
 
 let styles = StyleSheet.create({
+    homeView: {
+        flex: 1,
+        alignItems: 'stretch',
+        justifyContent: 'flex-start' },
     article: {
         flex: 1,
         alignItems: 'stretch',
         justifyContent: 'flex-start',
-        flexDirection: 'column'
+        paddingHorizontal: 5
     },
     textDefault: {
         fontFamily: 'PTSerif_400Regular',
@@ -32,35 +34,71 @@ let styles = StyleSheet.create({
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={styles.article}> 
-      {/*margin: '1' */} 
+    <View style={styles.homeView}>
+      {/*margin: '1' */}
       {/*<h2>Выберите категорию</h2>*/}
-      <Button
-        title={strings.ICTObjects.title}
-        color={strings.color}
-        onPress={() => navigation.navigate('ICTObjects')}
-      />
-      <Button
-        title={strings.CountingInf.title}
-        color={strings.color}
-        onPress={() => navigation.navigate('CountingInf')}
-      />
-      <Button
-        title={strings.NumBases.title}
-        color={strings.color}
-        onPress={() => navigation.navigate('NumBases')}
-      />
-      <Button
-        title={strings.Licenses.title}
-        color={strings.color}
-        onPress={() => navigation.navigate('Licenses')}
-      />
+      <View>
+          <Button
+              title={strings.ICTObjects.title}
+              color={strings.color}
+              onPress={() => navigation.navigate('ICTObjects')}
+          />
+          <Button
+              title={strings.CountingInf.title}
+              color={strings.color}
+              onPress={() => navigation.navigate('CountingInf')}
+          />
+      </View>
+      <View>
+          <Button
+              title={strings.NumBases.title}
+              color={strings.color}
+              onPress={() => navigation.navigate('NumBases')}
+          />
+      </View>
+      <View>
+          <Button
+              title={"Среда программирования PascalABC.NET"}
+              color={strings.color}
+          />
+      </View>
+      <View>
+          <Button
+              title={"Пакет офисных приложений OpenOffice.org"}
+              color={strings.color}
+          />
+      </View>
+      <View>
+          <Button
+              title={"Язык разметки HTML. Создание сайтов"}
+              color={strings.color}
+          />
+      </View>
+      <View>
+        <Button
+              title={strings.Licenses.title}
+              color={strings.color}
+              onPress={() => navigation.navigate('Licenses')}
+        />
+      </View>
+      <View>
+          <Button
+              title={"Исходный код приложения"}
+              color={"#2d333b"}
+              onPress={() => Linking.openURL('https://github.com/thegreathalva/handbook')}
+          />
+      </View>
     </View>
   );
 }
 
 function ICTObjects() {
   return (
+    <View style={{ 
+    flex: 1, 
+    alignItems: 'stretch', 
+    justifyContent: 'flex-start' 
+    }}>
       <View style={styles.article}>
         <Text style={styles.textDefault}>
             Информатика - наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений.
@@ -70,6 +108,7 @@ function ICTObjects() {
             Информатика как наука существует долгое время (к её достижениям, например, можно отнести счетную машину Пьеза Паскаля). Однако же, строго изучение теории информации существует благодаря Клоду Шеннону и его научным работам, которые и задали принципы изучения информации.
         </Text>
       </View>
+    </View>
   );
 }
 
